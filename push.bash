@@ -61,4 +61,10 @@ if [ -n "${CREATE_VISIBILITY}" ]; then
   BUF_ARGS+=("--create" "--create-visibility" "${CREATE_VISIBILITY}")
 fi
 
-BUF_TOKEN="${BUF_TOKEN}" "${BUF_COMMAND}" "push" "${BUF_INPUT}" "${BUF_ARGS[@]}"
+IFS=,
+for INPUT in ${BUF_INPUT}; do
+  if [ -n "${INPUT}" ]; then
+    BUF_TOKEN="${BUF_TOKEN}" "${BUF_COMMAND}" "push" "${INPUT}" "${BUF_ARGS[@]}"
+  fi
+done
+unset IFS

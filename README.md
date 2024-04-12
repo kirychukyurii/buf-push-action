@@ -45,12 +45,12 @@ We recommend using [`buf-setup-action`][buf-setup] to install it (as in the exam
 
 ## Configuration
 
-| Parameter           | Description                                                                    | Required | Default                             |
-| :------------------ | :----------------------------------------------------------------------------- | :------- | :---------------------------------- |
-| `buf_token`         | The [Buf authentication token][buf-token] used for private [Buf inputs][input] | ✅       | [`${{github.token}}`][github-token] |
-| `input`             | The path of the [input] you want to push to BSR as a module                    |          | `.`                                 |
-| `draft`             | Indicates if the workflows should push to the BSR as a [draft][buf-draft]      |          |                                     |
-| `create_visibility` | The visibility to create the BSR repository with, if it does not already exist |          |                                     |
+| Parameter           | Description                                                                                        | Required | Default                             |
+| :------------------ |:---------------------------------------------------------------------------------------------------| :------- | :---------------------------------- |
+| `buf_token`         | The [Buf authentication token][buf-token] used for private [Buf inputs][input]                     | ✅       | [`${{github.token}}`][github-token] |
+| `input`             | The path of the [input] you want to push to BSR as a module (single value or comma-separated list) |          | `.`                                 |
+| `draft`             | Indicates if the workflows should push to the BSR as a [draft][buf-draft]                          |          |                                     |
+| `create_visibility` | The visibility to create the BSR repository with, if it does not already exist                     |          |                                     |
 
 > These parameters are derived from [`action.yml`](./action.yml).
 

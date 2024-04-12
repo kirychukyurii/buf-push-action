@@ -9,7 +9,7 @@ inputs:
     description: The Buf authentication token.
     required: true
   input:
-    description: The Input path.
+    description: The Input path (can be a single value or comma-separated list).
     default: "."
     required: false
   draft:
@@ -27,4 +27,4 @@ runs:
         BUF_TOKEN: ${{ inputs.buf_token }}
         DRAFT: ${{ inputs.draft }}
         CREATE_VISIBILITY: ${{ inputs.create_visibility }}
-      run: $GITHUB_ACTION_PATH/push.bash ${{ inputs.input }}
+      run: $GITHUB_ACTION_PATH/push.bash "${{ inputs.input }}"
